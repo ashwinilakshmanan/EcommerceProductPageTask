@@ -296,21 +296,17 @@
   }
 }
 
-/* Add these responsive styles to your ProductPage.css file */
 
-/* Hide avatar on smaller screens */
 @media (max-width: 767px) {
   .navbar-right .avatar {
     display: none;
   }
   
-  /* Add some additional spacing between cart icon and edge when avatar is hidden */
   .navbar-right {
     padding-right: 0.5rem;
   }
 }
 
-/* Make sure cart badge displays correctly on all screen sizes */
 .cart-container {
   position: relative;
 }

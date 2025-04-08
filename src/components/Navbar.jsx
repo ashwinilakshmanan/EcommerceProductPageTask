@@ -18,7 +18,7 @@ const Navbar = () => {
         <div className="logo">sneakers</div>
         <div className="desktop-menu">
           <ul>
-            <li><a href="#collections">Collections</a></li>
+            <li><a href="/">Collections</a></li>
             <li><a href="#men">Men</a></li>
             <li><a href="#women">Women</a></li>
             <li><a href="#about">About</a></li>

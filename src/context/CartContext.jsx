@@ -8,7 +8,6 @@ export const CartProvider = ({ children }) => {
   const addToCart = (product, quantity) => {
     if (quantity <= 0) return;
     
-    // Check if product already exists in cart
     const existingItemIndex = cartItems.findIndex(item => item.id === product.id);
     
     if (existingItemIndex >= 0) {
