@@ -1,0 +1,183 @@
+.product-images {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.main-image {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.main-product-image {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.image-container.animating .main-product-image {
+  animation: fadeScale 0.5s ease;
+}
+
+@keyframes fadeScale {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.prev-btn, .next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--white);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.prev-btn:hover, .next-btn:hover {
+  background: var(--pale-orange);
+}
+
+.prev-btn {
+  left: 1rem;
+}
+
+.next-btn {
+  right: 1rem;
+}
+
+.prev-btn img, .next-btn img {
+  width: 12px;
+  height: auto;
+}
+
+.thumbnail-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.thumbnail {
+  width: 88px;
+  height: 88px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail:hover {
+  transform: translateY(-5px);
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s;
+}
+
+.thumbnail:hover img {
+  opacity: 0.7;
+}
+
+.thumbnail.active {
+  outline: 2px solid var(--orange);
+}
+
+.thumbnail.active img {
+  opacity: 0.5;
+}
+
+@media (max-width: 767px) {
+  .thumbnail {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .main-image {
+    border-radius: 0;
+  }
+  
+  .main-product-image {
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  .prev-btn, .next-btn {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  .product-images {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .main-image {
+    margin-bottom: 0;
+  }
+  
+  .main-product-image {
+    cursor: pointer;
+  }
+  
+  .thumbnail-container {
+    justify-content: flex-start;
+  }
+  
+  .prev-btn, .next-btn {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .main-image:hover .prev-btn,
+  .main-image:hover .next-btn {
+    opacity: 1;
+  }
+}
+
+
+.cart-container {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: hsl(26, 100%, 55%);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 0 6px;
+  border-radius: 8px;
+  min-width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
